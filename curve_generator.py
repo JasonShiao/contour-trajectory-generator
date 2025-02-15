@@ -169,7 +169,6 @@ def parametric_curve_generator(img_filepath, desired_size, debug=False):
     # Convert the contour to complex numbers
     complex_contour = contour[:, 0] + 1j * contour[:, 1]
 
-    complex_contour = complex_contour - np.mean(complex_contour)
     fourier_coeffs = np.fft.fft(complex_contour)
     num_coeffs = 100  # Adjust for accuracy vs simplicity
     
